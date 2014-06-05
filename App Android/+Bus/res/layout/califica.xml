@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/nombreEmpresaCalificar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp" 
+        />
+
+    <RatingBar
+        android:id="@+id/getRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="52dp"
+        android:numStars="5"
+        android:stepSize="1.0" />
+
+    <TextView
+        android:id="@+id/valoracionEmpresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/getRating"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp" />
+
+    <Button
+        android:id="@+id/calificarEmpresaButon"
+        style="@style/btnStyleoscuro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/valoracionEmpresa"
+        android:layout_centerHorizontal="true"
+        android:text="Calificar"
+        android:onClick="onClickCalificar" />
+
+</RelativeLayout>

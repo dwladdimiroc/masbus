@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <Spinner
+        android:id="@+id/destino"
+        style="@style/btnStyleclaro"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true" />
+
+    <Button
+        android:id="@+id/button1"
+        style="@style/btnStyleoscuro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="18dp"
+        android:onClick="onClickGoBackMain"
+        android:text="Inicio" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageButton1"
+        android:layout_marginLeft="14dp"
+        android:text="Origen" />
+
+    <Spinner
+        android:id="@+id/origen"
+        style="@style/btnStyleclaro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/destino"
+        android:layout_alignLeft="@+id/textView2"
+        android:text="Destino" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/btnStyleoscuro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="38dp"
+        android:onClick="onClickBuscar"
+        android:text="Enviar Datos" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        style="@style/btnnegro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="onClickGoBackMain"
+        android:src="@drawable/flecha1" />
+
+</RelativeLayout>

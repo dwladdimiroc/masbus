@@ -1,0 +1,65 @@
+{% extends 'AppMasBus/part.html' %}
+{% block PART %}
+
+<h2> Datos de empresa: </h2>
+
+<h3> {{empresa.nombreEmpresa}} </h3>
+
+<br>
+
+<ul>
+
+	<li> Calificación: {{promedioCalificacion}} (de {{cantidadVotos}} 
+		{% if cantidadVotos = 1 %}
+			voto)
+		{% else %}
+			votos)
+		{% endif %}
+	</li> 
+	<br>
+	<li> Tasa de accidentabilidad: {{empresa.tasaAccidentabilidad}} % </li>
+	<br>
+	<li> Cantidad de controles: {{empresa.cantidadControles}} </li>
+	<br>
+	<li> Porcentaje de flota: {{empresa.porcentajeFlota}} % </li>
+	<br>
+	<li> Convenios: </li>
+		
+		<ul>
+
+			{% if listaConvenios %}
+				{% for convenio in listaConvenios %}
+					<li> {{convenio.descripcion}} </li>
+				{% endfor %}
+			{% else %}
+				<li> Ninguno </li>
+			{% endif %}
+
+		</ul>
+
+	<br>
+	<li> Infracciones: </li>
+
+		<ul>
+
+		{% if listaInfracciones %}
+			{% for infraccion in listaInfracciones %}
+				<li> {{infraccion.infraccion}} </li>
+			{% endfor %}
+		{% else %}
+			<li> Ninguno </li>
+		{% endif %} 
+
+		</ul>
+
+</ul>
+
+<form action = "{% url 'AppMasBus:resultadoCalificacionEmpresa'  %}" method = "post">
+	{% csrf_token %}
+	<input name="empresa" value={{empresa.id}} style="visibility: hidden">
+	<p><button type="submit" class="btn btn-lg btn-default">Calificar empresa</button></p>
+</form>
+</br>
+</br>
+
+{% endblock %}

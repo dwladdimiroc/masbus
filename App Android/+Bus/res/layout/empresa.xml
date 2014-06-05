@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <ImageButton
+        android:id="@+id/imageButton1"
+        style="@style/btnnegro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="onClickGoBackMain"
+        android:src="@drawable/flecha1" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Empresa" />
+
+    <Spinner
+        android:id="@+id/spinnerEmpresa"
+        style="@style/btnStyleclaro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+ 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.95" >
+
+        <Button
+            android:id="@+id/verDatos"
+            style="@style/btnStyleoscuro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="66dp"
+            android:onClick="onClickVer"
+            android:text="Ver datos" />
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

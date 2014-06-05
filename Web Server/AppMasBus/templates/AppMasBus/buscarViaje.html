@@ -1,0 +1,48 @@
+{% extends 'AppMasBus/part.html' %}
+{% block PART %}
+{% if ciudades_list %}
+
+<form action = "{% url 'AppMasBus:resultadoBusquedaViaje'  %}" method = "post">
+
+	{% csrf_token %}
+	<div class="row">
+
+		<div class="col-lg-10">
+			<h2> Búsqueda de rutas: </h2>
+		</div>
+
+        <div class="col-lg-3">
+		    <h4>Origen:</h4>
+			<p><select name = "origen">
+			{% for ciudad in ciudades_list %}
+				<option value="{{ciudad.id}}">
+					{{ciudad.nombreCiudad}}
+				</option>
+				{% endfor %}
+			</select></p>
+		</div>
+
+	
+	    <div class="col-lg-3">
+			<h4>Destino:</h4>
+			<p><select name = "destino">
+			{% for ciudad in ciudades_list %}
+				<option value="{{ciudad.id}}">
+					{{ciudad.nombreCiudad}}
+				</option>
+			{% endfor %}
+			</select></p>
+		</div>
+
+		<div class="col-lg-2">
+			</br><button type="submit" class="btn btn-lg btn-default">Buscar Viajes</button>
+		</div>
+	</div>
+
+</form>
+
+{% endif %}
+
+
+
+{% endblock %}

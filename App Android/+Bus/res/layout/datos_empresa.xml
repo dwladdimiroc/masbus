@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android1:gravity="center_horizontal" >
+
+    <TextView
+        android:id="@+id/nombreEmpresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="10sp" />
+
+    <TextView
+        android1:id="@+id/datosEmpresa"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_below="@+id/nombreEmpresa"
+        android1:layout_centerHorizontal="true"
+        android1:textSize="10sp" />
+
+    <Button
+        android1:id="@+id/button2"
+        style="@style/btnStyleoscuro"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_above="@+id/button1"
+        android1:layout_centerHorizontal="true"
+        android1:onClick="onClickBack"
+        android1:text="volver" />
+
+    <Button
+        android1:id="@+id/button1"
+        style="@style/btnStyleoscuro"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignParentBottom="true"
+        android1:layout_centerHorizontal="true"
+        android1:layout_marginBottom="25dp"
+        android1:onClick="onClickGoBackMain"
+        android1:text="main" />
+
+    <Button
+        android1:id="@+id/butonCalificar"
+        style="@style/btnStyleoscuro"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_above="@+id/button2"
+        android1:layout_alignLeft="@+id/button1"
+        android1:onClick="onClickCalificar"
+        android1:text="Calificar" />
+
+</RelativeLayout>
