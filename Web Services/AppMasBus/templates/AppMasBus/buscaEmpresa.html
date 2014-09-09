@@ -1,0 +1,30 @@
+{% extends 'AppMasBus/part.html' %}
+{% block PART %}
+{% if lista_empresas %}
+
+<form action = "{% url 'AppMasBus:resultadoBusquedaEmpresa'  %}" method = "post">
+
+	{% csrf_token %}
+
+	<div class="row">
+      	
+	    <div class="col-lg-10">
+			<h2>Datos de empresa:</h2>
+			<h3>Seleccione una empresa a continuación: </h3>
+			<p><select name = "empresa">
+			{% for empresa in lista_empresas %}
+				<option value="{{empresa.id}}">
+					{{empresa.nombreEmpresa}}
+				</option>
+			{% endfor %}
+			</select></p>
+
+			<br><button type="submit" class="btn btn-lg btn-default">Buscar Empresa</button></br>
+		</div>
+
+		
+	</div>
+</form>
+{% endif %}
+
+{% endblock %}

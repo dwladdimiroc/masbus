@@ -1,0 +1,50 @@
+{% extends 'AppMasBus/base.html' %}
+{% block MAIN %}
+
+{% if origen = destino %}
+
+  </br>
+  <h1>No sea tonto</h1> 
+  <h3>El origen y el destino deben ser distintos</h3>
+  <br>
+  <p><form action = "{% url 'AppMasBus:buscarViaje' %}"><button type="submit" class="btn btn-lg btn-default">Volver</button></form></p>
+
+{% elif viajes_list %}
+
+  <h3> Viajes desde {{origen}} hasta {{destino}}: </h3>
+
+  <div class="panel panel-default">     
+
+          <!-- Table -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Compañía</th>
+                <th>Fecha</th>
+                <th>Precio</th>
+                <th>Tiempo estimado de viaje (minutos)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for viaje in viajes_list %}	    
+  				<tr>
+  		        <td>{{viaje.empresa.nombreEmpresa}}</td>
+  		        <td>{{viaje.fechaSalida}}</td>
+  		        <td>{{viaje.precio}}</td>
+  		        <td>{{viaje.tiempoEstimadoMinutos}}</td>
+  		        </tr>
+  			{% endfor %}            
+            </tbody>
+          </table>
+   </div>
+
+{% else %}
+	</br>
+	<h1>Lo sentimos</h1> 
+	<h3>No hay viajes desde {{origen}} hasta {{destino}} para los próximos 7 días</h3>
+  <br>
+  <p><form action = "{% url 'AppMasBus:buscarViaje' %}"><button type="submit" class="btn btn-lg btn-default">Volver</button></form></p>
+{% endif %}
+
+
+{% endblock %}
